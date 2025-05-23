@@ -29,20 +29,35 @@ def kasta_tarning():
     else:
         current_round_score += kast
         round_score_label.config(text=f"Rundpoäng: {current_round_score}")
+#funktion av abdikariim
 
 
 def behall_poang():
     global player_scores, current_round_score, current_player
 
 
-def byt_spelare():
+def byt_spelare(): #funktion av abdikariim
     global current_player, current_round_score
-
-    round_score_label.config(text="Rundpoäng: 0")
+    current_player = 1 - current_player
+    current_round_score = 0
+    info_label.config(text=f"Spelare {current_player + 1}'s tur")
 
 
 def nytt_spel():
     global player_scores, current_round_score, current_player
+#skapad av abdikariim
+def nytt_spel():
+    global player_scores, current_round_score, current_player
+
+    player_scores = [0, 0]
+    current_round_score = 0
+    current_player = 0
+    score_label.config(text="Spelare 1: 0  Spelare 2: 0")
+    round_score_label.config(text="Rundpoäng: 0")
+    dice_label.config(text="Tärning: -")
+    info_label.config(text="Spelare 1's tur")
+    roll_button.config(state=NORMAL)
+    hold_button.config(state=NORMAL)
 
 
 #creating labels and buttons #skapat av abdikariim, tillägg av kommando av Isac
